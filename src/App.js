@@ -6,9 +6,9 @@ import Install from './Install';
 export default function App(props) {
   console.log(props);
   const config = {
-    apiKey: process.env.REACT_APP_API_KEY,
+    apiKey: process.env.REACT_APP_SHOPIFY_API_KEY,
     shopOrigin: 'bazingasuperstore.myshopify.com',
-    host: Buffer.from(process.env.REACT_APP_HOST).toString('base64'),
+    host: Buffer.from(process.env.REACT_APP_BLINKSKY_HOST).toString('base64'),
   };
 
   return (

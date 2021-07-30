@@ -26,10 +26,16 @@ export default function Install(props) {
   const scopes = ['write_orders', 'read_customers'].join(',');
   const nonce = randomString(8);
 
-  const redirectUri = `https://${process.env.REACT_APP_HOST}/app`;
+  const redirectUri = `https://${process.env.REACT_APP_BLINKSKY_HOST}/app`;
+
+  useEffect(async () => {
+    const state = await app.getState();
+    console.log('got state');
+    console.log(state);
+  });
 
   const config = {
-    apiKey: process.env.REACT_APP_API_KEY,
+    apiKey: process.env.REACT_APP_SHOPIFY_API_KEY,
   };
 
   return (
