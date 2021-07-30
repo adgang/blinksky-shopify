@@ -1,0 +1,17 @@
+{
+  "name": "blinksky-shopify-app",
+  "version": "0.1.0",
+  "description": "Shopify public app to use blinksky payments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Blinksky",
+    "Payments",
+    "Gift",
+    "Cards",
+    "Shopify"
+  ],
+  "author": "@adgang"
+}
