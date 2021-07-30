@@ -40,8 +40,6 @@ export default function Install(props) {
 
   return (
     <section>
-      <TitleBar title="My page title" />
-      <TitleBar title="My page title" />
       <a
         href={`https://${shop}/admin/oauth/authorize?client_id=${config.apiKey}&scope=${scopes}&redirect_uri=${redirectUri}&state=${nonce}`}
       >
