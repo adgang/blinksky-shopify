@@ -28,12 +28,6 @@ export default function Install(props) {
 
   const redirectUri = `https://${process.env.REACT_APP_HOST}/app`;
 
-  useEffect(async () => {
-    const state = await app.getState();
-    console.log('got state');
-    console.log(state);
-  });
-
   const config = {
     apiKey: process.env.REACT_APP_API_KEY,
   };
