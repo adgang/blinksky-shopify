@@ -35,9 +35,7 @@ export default function Install(props) {
   });
 
   const config = {
-    apiKey: 'ad3b7566c6dd1cdf9ff2878bf50265b2',
-    shopOrigin: shop,
-    host: Buffer.from(process.env.REACT_APP_HOST).toString('base64'),
+    apiKey: process.env.REACT_APP_API_KEY,
   };
 
   return (
