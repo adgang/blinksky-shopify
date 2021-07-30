@@ -4,6 +4,16 @@ import { BrowserRouter as Router, Switch, useLocation } from 'react-router-dom';
 
 export default function Install(props) {
   console.log(props);
+  const {
+    REACT_APP_SHOPIFY_API_KEY,
+    REACT_APP_SHOPIFY_API_SECRET_KEY,
+    REACT_APP_BLINKSKY_HOST,
+  } = process.env;
+  console.log(
+    REACT_APP_SHOPIFY_API_KEY,
+    REACT_APP_SHOPIFY_API_SECRET_KEY,
+    REACT_APP_BLINKSKY_HOST,
+  );
   const app = useAppBridge();
 
   const location = useLocation();
