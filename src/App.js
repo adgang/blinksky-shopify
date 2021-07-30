@@ -6,11 +6,9 @@ import Install from './Install';
 export default function App(props) {
   console.log(props);
   const config = {
-    apiKey: 'ad3b7566c6dd1cdf9ff2878bf50265b2',
+    apiKey: process.env.REACT_APP_API_KEY,
     shopOrigin: 'bazingasuperstore.myshopify.com',
-    host: Buffer.from('affectionate-albattani-a03799.netlify.app').toString(
-      'base64',
-    ),
+    host: Buffer.from(process.env.REACT_APP_HOST).toString('base64'),
   };
 
   return (

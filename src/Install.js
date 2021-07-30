@@ -26,7 +26,7 @@ export default function Install(props) {
   const scopes = ['write_orders', 'read_customers'].join(',');
   const nonce = randomString(8);
 
-  const redirectUri = 'https://affectionate-albattani-a03799.netlify.app/app';
+  const redirectUri = `https://${process.env.REACT_APP_HOST}/app`;
 
   useEffect(async () => {
     const state = await app.getState();
@@ -37,17 +37,13 @@ export default function Install(props) {
   const config = {
     apiKey: 'ad3b7566c6dd1cdf9ff2878bf50265b2',
     shopOrigin: shop,
-    host: Buffer.from('affectionate-albattani-a03799.netlify.app').toString(
-      'base64',
-    ),
+    host: Buffer.from(process.env.REACT_APP_HOST).toString('base64'),
   };
 
   return (
     <section>
-      <Provider config={config}>
-        <TitleBar title="My page title" />
-        <TitleBar title="My page title" />]
-      </Provider>
+      <TitleBar title="My page title" />
+      <TitleBar title="My page title" />
       <a
         href={`https://${shop}/admin/oauth/authorize?client_id=${config.apiKey}&scope=${scopes}&redirect_uri=${redirectUri}&state=${nonce}`}
       >
