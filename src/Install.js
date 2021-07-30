@@ -9,7 +9,6 @@ export default function Install(props) {
     process.env.REACT_APP_SHOPIFY_API_SECRET_KEY,
     process.env.REACT_APP_BLINKSKY_HOST,
   );
-  const app = useAppBridge();
 
   const location = useLocation();
   console.log(location);
@@ -32,12 +31,6 @@ export default function Install(props) {
   const nonce = randomString(8);
 
   const redirectUri = `https://${process.env.REACT_APP_BLINKSKY_HOST}/app`;
-
-  useEffect(async () => {
-    const state = await app.getState();
-    console.log('got state');
-    console.log(state);
-  });
 
   const config = {
     apiKey: process.env.REACT_APP_SHOPIFY_API_KEY,
