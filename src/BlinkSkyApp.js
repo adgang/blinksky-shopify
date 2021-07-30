@@ -17,7 +17,7 @@ export default function BlinkSkyApp(props) {
   ].map((c) => queryParams.get(c));
 
   const getAccessToken = async () => {
-    const url = `https://${shop}.myshopify.com/admin/oauth/access_token`;
+    const url = `https://${shop}/admin/oauth/access_token`;
     const response = await axios.post(url, {
       client_id: process.env.REACT_APP_SHOPIFY_API_KEY,
       client_secret: process.env.REACT_APP_SHOPIFY_API_SECRET_KEY,
