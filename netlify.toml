@@ -3,5 +3,6 @@
   publish="/build"
 [[redirects]]
   from = "/*"
-  to = "/YOUR-BASE-URL"
+  to = "/index.html"
   status = 200
+  force = false
