@@ -8,14 +8,25 @@ export default function Install(props) {
 
   const location = useLocation();
   console.log(location);
+  console.log(location.pathname);
   const queryParams = new URLSearchParams(location.search);
   const [hmac, shop, timestamp] = ['hmac', 'shop', 'timestamp'].map((c) =>
     queryParams.get(c),
   );
+  var randomString = function (length) {
+    var text = '';
+    var possible =
+      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    for (var i = 0; i < length; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+  };
   console.log(hmac, shop, timestamp);
   const scopes = ['write_orders', 'read_customers'].join(',');
-  const nonce = 2;
-  const redirectUri = 'https://localhost:3000/welcome';
+  const nonce = randomString(8);
+
+  const redirectUri = 'https://affectionate-albattani-a03799.netlify.app/app';
 
   useEffect(async () => {
     const state = await app.getState();
@@ -26,7 +37,9 @@ export default function Install(props) {
   const config = {
     apiKey: 'ad3b7566c6dd1cdf9ff2878bf50265b2',
     shopOrigin: shop,
-    host: Buffer.from('//localhost:3000').toString('base64'),
+    host: Buffer.from('affectionate-albattani-a03799.netlify.app').toString(
+      'base64',
+    ),
   };
 
   return (
